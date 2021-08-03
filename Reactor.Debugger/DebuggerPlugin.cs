@@ -101,9 +101,9 @@ namespace Reactor.Debugger
                             GameData.Instance.RpcSetTasks(playerControl.PlayerId, new byte[0]);
                         }
                         
-                        if (GUILayout.Button("Die", new Il2CppReferenceArray<GUILayoutOption>(0))) // mabe work
+                        if (GUILayout.Button("Die", new Il2CppReferenceArray<GUILayoutOption>(0))) 
                         {
-                            PlayerControl.LocalPlayer.Die(DeathReason.Exile)
+                            PlayerControl.LocalPlayer.Die(DeathReason.Exile);
                         }
                     }
 
