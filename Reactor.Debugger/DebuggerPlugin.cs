@@ -83,6 +83,7 @@ namespace Reactor.Debugger
                             }
                         }
 
+
                         if (GUILayout.Button("Spawn a dummy", new Il2CppReferenceArray<GUILayoutOption>(0)))
                         {
                             var playerControl = Instantiate(TutorialManager.Instance.PlayerPrefab);
@@ -98,6 +99,11 @@ namespace Reactor.Debugger
                             playerControl.SetPet(i % (uint) HatManager.Instance.AllPets.Count);
                             playerControl.SetSkin(i % (uint) HatManager.Instance.AllSkins.Count);
                             GameData.Instance.RpcSetTasks(playerControl.PlayerId, new byte[0]);
+                        }
+                        
+                        if (GUILayout.Button("Die", new Il2CppReferenceArray<GUILayoutOption>(0)))
+                        {
+                            PlayerControl.LocalPlayer.Die(DeathReason.Exile)
                         }
                     }
 
